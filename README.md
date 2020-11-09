@@ -103,6 +103,10 @@ After the setup of the RepEnrich2 we now have to map our data uniquely to the ge
 
 First, perform mapping using Bowtie2 (example using paired end data):
 
+     # Build the bowtie2 indexes
+     bowtie2 build -f /path/to/annotation/mm9/mm9.fa mm9
+     
+     # Map the paired-end reads to the mm9 reference genome
      bowtie2 -q -p 16 -x /path/to/annotation/mm9/mm9 -1 /home/Dataset/Sample_L001_R1.fastq -2 /home/Dataset/Sample_L001_R2.fastq -S /home/output/sample_mapped.sam
 
 An explanation of the Bowtie2 options (detailed explanations found [here](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#command-line)):
